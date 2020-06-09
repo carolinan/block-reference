@@ -1,0 +1,10 @@
+{
+	"name": "core/post-tags",
+	"category": "design",
+	"context": [
+		"postId"
+	],
+	"supports": {
+		"html": false
+	}
+}

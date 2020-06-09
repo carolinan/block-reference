@@ -1,0 +1,10 @@
+{
+	"name": "core/post-featured-image",
+	"category": "design",
+	"context": [
+		"postId"
+	],
+	"supports": {
+		"html": false
+	}
+}
