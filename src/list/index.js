@@ -17,13 +17,13 @@ const { name } = metadata;
 export { metadata, name };
 
 export const settings = {
-	title: __( 'List' ),
-	description: __( 'Create a bulleted or numbered list.' ),
+	title: __('List'),
+	description: __('Create a bulleted or numbered list.'),
 	icon,
 	keywords: [
-		__( 'bullet list' ),
-		__( 'ordered list' ),
-		__( 'numbered list' ),
+		__('bullet list'),
+		__('ordered list'),
+		__('numbered list'),
 	],
 	example: {
 		attributes: {
@@ -32,10 +32,10 @@ export const settings = {
 		},
 	},
 	transforms,
-	merge( attributes, attributesToMerge ) {
+	merge(attributes, attributesToMerge) {
 		const { values } = attributesToMerge;
 
-		if ( ! values || values === '<li></li>' ) {
+		if (!values || values === '<li></li>') {
 			return attributes;
 		}
 

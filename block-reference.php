@@ -76,7 +76,7 @@ if ( ! class_exists( 'Block_Reference' ) ) :
 			'showMoreOnNewLine', 'isLink', 'term', 'citation', 'mainColor', 'customMainColor', 'queryId', 'query',
 			'blockLayout', 'feedURL', 'itemsToShow', 'showLabel', 'widthUnit', 'buttonText', 'buttonPosition',
 			'buttonUseIcon', 'color', 'customColor', 'service', 'openInNewTab', 'taxonomy', 'showTagCounts', 'postId',
-			'slug', 'theme', 'controls', 'muted', 'poster', 'playsInline', 'tracks',
+			'slug', 'theme', 'controls', 'muted', 'poster', 'playsInline', 'tracks', 'contentJustification',
 		];
 
 		/**
@@ -87,7 +87,9 @@ if ( ! class_exists( 'Block_Reference' ) ) :
 		 */
 		private static $supportlist = [
 			'align', 'anchor', 'color', 'customClassName', 'fontSize', 'html', 'inserter', 'lineHeight',
-			'multiple', 'reusable', 'spacing',
+			'multiple', 'reusable', 'spacing', '__experimentalFontAppearance', '__experimentalTextTransform',
+			'__experimentalFontFamily', '__experimentalTextDecoration',
+			'__experimentalSelector', '__unstablePasteTextInline',
 		];
 
 		/**
