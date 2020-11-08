@@ -111,7 +111,7 @@ if ( ! class_exists( 'Block_Reference' ) ) :
 		public function filter_output( $content ) {
 			if ( get_the_title() === 'Block Reference' ) {
 				ob_start();
-				$content = self::output();
+				self::output();
 				return ob_get_clean();
 			} else {
 				return $content;
@@ -193,7 +193,7 @@ if ( ! class_exists( 'Block_Reference' ) ) :
 
 			wp_nonce_field( 'block_form_action', 'block_form_nonce_field' );
 			echo '<br><input class="button" type="submit" value="' , esc_attr__( 'Continue', 'block-reference' ) , '" />';
-			echo '</form><hr class="wp-block-separator is-style-wide" style="background:#000;" />';
+			echo '</form><br><hr class="wp-block-separator is-style-wide" style="background:#000;" />';
 		}
 
 		/**
