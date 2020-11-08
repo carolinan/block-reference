@@ -47,6 +47,7 @@ https://fullsiteediting.com/block-reference/
 
 ### License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
 Copyright Carolina Nymark 2020.
 
 ### Credits
