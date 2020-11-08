@@ -109,13 +109,13 @@ if ( ! class_exists( 'Block_Reference' ) ) :
 		 * @param var $content post content.
 		 */
 		public function filter_output( $content ) {
-			global $post;
-
-			if ( is_singular() && get_the_title() === 'Block Reference' ) {
-				return self::output();
+			if ( get_the_title() === 'Block Reference' ) {
+				ob_start();
+				$content = self::output();
+				return ob_get_clean();
+			} else {
+				return $content;
 			}
-
-			return $content;
 		}
 
 		/**
@@ -193,7 +193,7 @@ if ( ! class_exists( 'Block_Reference' ) ) :
 
 			wp_nonce_field( 'block_form_action', 'block_form_nonce_field' );
 			echo '<br><input class="button" type="submit" value="' , esc_attr__( 'Continue', 'block-reference' ) , '" />';
-			echo '</form><hr>';
+			echo '</form><hr class="wp-block-separator is-style-wide" style="background:#000;" />';
 		}
 
 		/**
@@ -572,7 +572,7 @@ if ( ! class_exists( 'Block_Reference' ) ) :
 					} // End for each.
 				}
 			}
-			echo '</p><hr>';
+			echo '</p><hr class="wp-block-separator is-style-wide" style="background:#000;" />';
 			foreach ( $files as $file ) {
 				$block_info = json_decode( file_get_contents( $file ), true );
 				/* Attributes */
@@ -601,7 +601,7 @@ if ( ! class_exists( 'Block_Reference' ) ) :
 
 			printf(
 				/* translators: %s: search term. */
-				'<h3>' . esc_html__( 'The following blocks has registered support for %s:', 'block-reference' ) . '</h3>',
+				'<h3>' . esc_html__( 'The following blocks have registered support for "%s":', 'block-reference' ) . '</h3>',
 				$support
 			);
 			echo '<p>';
@@ -626,7 +626,7 @@ if ( ! class_exists( 'Block_Reference' ) ) :
 
 			printf(
 				/* translators: %s: search term. */
-				'<h3>' . __( 'The following blocks has registered that they do <b>not</b> have support for %s:', 'block-reference' ) . '</h3>',
+				'<h3>' . __( 'The following blocks have registered that they do <b>not</b> have support for "%s":', 'block-reference' ) . '</h3>',
 				$support
 			);
 			echo '<p>';
@@ -648,7 +648,7 @@ if ( ! class_exists( 'Block_Reference' ) ) :
 			if ( ! isset( $has_no_support ) ) {
 				echo '-';
 			}
-			echo '</p><hr>';
+			echo '</p><hr class="wp-block-separator is-style-wide" style="background:#000;" />';
 
 			echo '<h3>' . esc_html__( 'Block information', 'block-reference' ) . '<h3>';
 			foreach ( $files as $file ) {
@@ -695,7 +695,6 @@ if ( ! class_exists( 'Block_Reference' ) ) :
 				$block = '*';
 				self::block_result( $block );
 			}
-
 		}
 	}
 
