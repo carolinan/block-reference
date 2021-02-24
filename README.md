@@ -1,3 +1,6 @@
+## This plugin is no longer maintained on GitHub
+
+
 ## Block reference
 
 This plugin parses block information from the Gutenberg plugin block library using 
